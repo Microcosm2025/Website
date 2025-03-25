@@ -158,22 +158,27 @@
     <script>
         const loginForm = document.getElementById("loginForm");
         const errorMessage = document.getElementById("errorMessage");
-
+    
         loginForm.addEventListener("submit", function (e) {
             e.preventDefault();
-
-            const username = document.getElementById("username").value;
-            const password = document.getElementById("password").value;
-
-            if (username == "microcosm" && password == "Microcosm@2025") {
+    
+            // Trim input values to avoid accidental spaces
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value.trim();
+    
+            // Correct username and password (case-sensitive)
+            const correctUsername = "microcosm";
+            const correctPassword = "Microcosm@2025";
+    
+            if (username === correctUsername && password === correctPassword) {
                 alert("Login successful!");
-                window.location.href = "https://docs.google.com/forms/d/1usosf64D0s6Y3c0Zz-CfvqrYsIoLB-Nk7oNGQPt9Wb0/edit";
+                window.location.href = "https://docs.google.com/forms/";
             } else {
                 errorMessage.textContent = "Invalid username or password!";
             }
         });
-
     </script>
+    
 </body>
 
 </html>
